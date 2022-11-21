@@ -44,3 +44,32 @@ document.body.removeChild(link)//销毁我们的a标签dom
 
 URL.revokeObjectUrl(link.href)//然后销毁我们的临时数据链接
 
+## 双击全屏
+
+window.addEventListener('dblclick',()=>{
+
+//首先我们先监听我们浏览器的双击事件
+
+​		if(document.fullscreenElement){
+
+//通过document.fullscreenElement属性判断是否全屏如果是就使用下面的exitFullscreen方法退出
+
+​			document.exitFullscreen()
+
+}else{
+
+​			document.querySelector('canvas').requestFullscreen()
+
+//如果不是全屏就使用我们的dom元素的requestFullscreen方法进入全屏
+
+}
+
+})
+
+## 屏幕大小自适应
+
+window.addEventListener('resize',()=>{
+
+//通过监听我们的浏览器去获取其innerHeight和innerWidth来设置我们想要自适应的元素
+
+})
